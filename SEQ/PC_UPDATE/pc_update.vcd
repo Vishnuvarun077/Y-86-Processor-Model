@@ -1,0 +1,87 @@
+$date
+	Sun Feb 18 19:06:24 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_pc_update $end
+$scope module tb_pc_update $end
+$var wire 1 ! clk $end
+$var wire 1 " cnd $end
+$var wire 4 # icode [3:0] $end
+$var wire 64 $ valC [63:0] $end
+$var wire 64 % valM [63:0] $end
+$var wire 64 & valP [63:0] $end
+$var reg 64 ' PC [63:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx '
+bx &
+bx %
+bx $
+bx #
+x"
+x!
+$end
+#5
+0!
+#10
+b101 '
+b111 &
+b110 %
+b101 $
+0"
+b1000 #
+1!
+#15
+0!
+#20
+b111 '
+b111 #
+1!
+#25
+0!
+#30
+b101 '
+1"
+1!
+#35
+0!
+#40
+b110 '
+b1001 #
+1!
+#45
+0!
+#50
+b100 '
+b1000 &
+b100 $
+0"
+b1000 #
+1!
+#55
+0!
+#60
+1"
+b111 #
+1!
+#65
+0!
+#70
+b1000 '
+0"
+1!
+#75
+0!
+#80
+b110 '
+b1001 #
+1!
+#85

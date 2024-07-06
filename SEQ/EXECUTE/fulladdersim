@@ -1,0 +1,105 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55d5a7ca5b40 .scope module, "tb_fulladder" "tb_fulladder" 2 3;
+ .timescale -9 -12;
+v0x55d5a7cb8f60_0 .var "A", 0 0;
+v0x55d5a7cb9020_0 .var "B", 0 0;
+v0x55d5a7cb90f0_0 .var "Cin", 0 0;
+v0x55d5a7cb91f0_0 .net "Cout", 0 0, L_0x55d5a7cb9760;  1 drivers
+v0x55d5a7cb92c0_0 .net "S", 0 0, L_0x55d5a7cb94f0;  1 drivers
+S_0x55d5a7ca5cd0 .scope module, "uut" "fulladder" 2 7, 3 1 0, S_0x55d5a7ca5b40;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 1 "S";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0x55d5a7cb93b0 .functor XOR 1, v0x55d5a7cb8f60_0, v0x55d5a7cb9020_0, C4<0>, C4<0>;
+L_0x55d5a7cb94f0 .functor XOR 1, L_0x55d5a7cb93b0, v0x55d5a7cb90f0_0, C4<0>, C4<0>;
+L_0x55d5a7cb9650 .functor AND 1, v0x55d5a7cb8f60_0, v0x55d5a7cb9020_0, C4<1>, C4<1>;
+L_0x55d5a7cb96c0 .functor AND 1, L_0x55d5a7cb93b0, v0x55d5a7cb90f0_0, C4<1>, C4<1>;
+L_0x55d5a7cb9760 .functor OR 1, L_0x55d5a7cb9650, L_0x55d5a7cb96c0, C4<0>, C4<0>;
+v0x55d5a7ca5eb0_0 .net "A", 0 0, v0x55d5a7cb8f60_0;  1 drivers
+v0x55d5a7cb8920_0 .net "B", 0 0, v0x55d5a7cb9020_0;  1 drivers
+v0x55d5a7cb89e0_0 .net "Cin", 0 0, v0x55d5a7cb90f0_0;  1 drivers
+v0x55d5a7cb8ab0_0 .net "Cout", 0 0, L_0x55d5a7cb9760;  alias, 1 drivers
+v0x55d5a7cb8b70_0 .net "D0", 0 0, L_0x55d5a7cb93b0;  1 drivers
+v0x55d5a7cb8c80_0 .net "D1", 0 0, L_0x55d5a7cb9650;  1 drivers
+v0x55d5a7cb8d40_0 .net "D2", 0 0, L_0x55d5a7cb96c0;  1 drivers
+v0x55d5a7cb8e00_0 .net "S", 0 0, L_0x55d5a7cb94f0;  alias, 1 drivers
+    .scope S_0x55d5a7ca5b40;
+T_0 ;
+    %vpi_call 2 16 "$dumpfile", "fulladder_tb.vcd" {0 0 0};
+    %vpi_call 2 17 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55d5a7ca5b40 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55d5a7cb8f60_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55d5a7cb9020_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55d5a7cb90f0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55d5a7cb8f60_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55d5a7cb9020_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55d5a7cb90f0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55d5a7cb8f60_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55d5a7cb9020_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55d5a7cb90f0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55d5a7cb8f60_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55d5a7cb9020_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55d5a7cb90f0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55d5a7cb8f60_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55d5a7cb9020_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55d5a7cb90f0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55d5a7cb8f60_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55d5a7cb9020_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55d5a7cb90f0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55d5a7cb8f60_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55d5a7cb9020_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55d5a7cb90f0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55d5a7cb8f60_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55d5a7cb9020_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55d5a7cb90f0_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 51 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_fulladder.v";
+    "fulladder.v";
